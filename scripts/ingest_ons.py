@@ -2,10 +2,10 @@ import pandas as pd
 from google.oauth2 import service_account
 import pandas_gbq
 
-print("--- O SCRIPT COMEÇOU A RODAR ---") # Adicione isso aqui!
+print("--- O SCRIPT COMEÇOU A RODAR ---") 
 
 # 1. Configurações de Identidade
-SERVICE_ACCOUNT_FILE = 'credentials.json' # Garanta que o arquivo está na mesma pasta!
+SERVICE_ACCOUNT_FILE = 'credentials.json' 
 PROJECT_ID = 'portfolio-energy-analytics'
 DATASET_ID = 'raw_ons'
 TABLE_ID = 'geracao_usina_diaria'
