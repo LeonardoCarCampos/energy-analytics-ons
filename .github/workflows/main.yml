@@ -1,0 +1,30 @@
+name: ONS Daily Ingestion
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Roda todo dia à meia-noite
+  workflow_dispatch: # Permite rodar manualmente pelo botão no GitHub
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    enviroment: GCP_SA_KEY
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install pandas pyarrow google-cloud-bigquery requests
+
+      - name: Run Ingestion
+        env:
+          # Transforma o secret em um arquivo temporário para o script ler
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GCP_SA_KEY }}
+        run: |
+          echo $GOOGLE_APPLICATION_CREDENTIALS_JSON > credentials.json
+          python ingest_ons.py

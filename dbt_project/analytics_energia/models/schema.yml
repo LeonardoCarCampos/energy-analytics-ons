@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_ons
+    database: portfolio-energy-analytics
+    schema: raw_ons
+    tables:
+      - name: geracao_usina_diaria
+        description: "Dados brutos de geração de energia diária por usina, extraídos do ONS."
