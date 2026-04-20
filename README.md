@@ -49,3 +49,30 @@ The project documentation includes a dbt-generated lineage graph, providing full
 1. Configure Google Cloud credentials in the `profiles.yml` file.
 2. Run the ingestion script: `python scripts/ingest_ons.py`.
 3. Execute dbt transformations and tests: `dbt run`.
+
+---
+
+# Energy Analytics Pipeline - ONS
+
+Este proyecto presenta la implementación de un pipeline de datos completo (ELT) utilizando datos de generación de energía del Operador Nacional del Sistema Eléctrico (ONS) de Brasil. El objetivo es demostrar la aplicación de buenas prácticas de ingeniería de datos y modelado analítico para el sector energético.
+
+## Tecnologías y Herramientas
+* **Python**: Automatización de la extracción a través de datos abiertos y carga inicial.
+* **Google BigQuery**: Data Warehouse utilizado para almacenamiento y procesamiento escalable en la nube.
+* **dbt (data build tool)**: Framework para transformación, control de linaje, pruebas de calidad y documentación.
+
+## Arquitectura del Proyecto
+El flujo de datos se estructuró siguiendo los principios de ELT moderno:
+1. **Ingestión**: Script Python configurado para extraer datos brutos y cargarlos en la capa `raw` de BigQuery, garantizando la preservación de la fuente original.
+2. **Transformación (Staging)**: Modelado inicial para la estandarización de tipos de datos, limpieza de cadenas (strings) y renombre de campos técnicos para facilitar la comprensión.
+3. **Modelado (Analytics/Mart)**: Creación de tablas de hechos consolidadas por subsistema y planta generadora, optimizadas para el consumo directo en herramientas de Business Intelligence.
+
+## Linaje de Datos (Lineage)
+La documentación del proyecto incluye el gráfico de linaje generado por dbt, que permite la trazabilidad total del dato, desde su origen bruto hasta el modelo final de negocio.
+
+![Lineage Graph](./lineage_graph.png)
+
+## Instrucciones de Ejecución
+1. Configuración de las credenciales de Google Cloud en el archivo `profiles.yml`.
+2. Ejecución del script de ingestión: `python scripts/ingest_ons.py`.
+3. Ejecución de las transformaciones y pruebas en dbt: `dbt run`.
