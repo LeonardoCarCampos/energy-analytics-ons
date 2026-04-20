@@ -1,4 +1,4 @@
-# Energy Analytics Pipeline - ONS
+# Energy Analytics Pipeline - ONS (Português)
 
 Este projeto apresenta a implementação de um pipeline de dados completo (ELT) utilizando dados de geração de energia do Operador Nacional do Sistema Elétrico (ONS). O objetivo é demonstrar a aplicação de boas práticas de engenharia de dados e modelagem analítica para o setor elétrico.
 
@@ -25,7 +25,7 @@ A documentação do projeto inclui o grafo de linhagem gerado pelo dbt, que perm
 
 ---
 
-# Energy Analytics Pipeline - ONS
+# Energy Analytics Pipeline - ONS (English)
 
 This project implements a complete data pipeline (ELT) utilizing energy generation data from the Brazilian National Electric System Operator (ONS). The goal is to demonstrate the application of data engineering best practices and analytical modeling within the energy sector.
 
@@ -52,7 +52,7 @@ The project documentation includes a dbt-generated lineage graph, providing full
 
 ---
 
-# Energy Analytics Pipeline - ONS
+# Energy Analytics Pipeline - ONS (Español)
 
 Este proyecto presenta la implementación de un pipeline de datos completo (ELT) utilizando datos de generación de energía del Operador Nacional del Sistema Eléctrico (ONS) de Brasil. El objetivo es demostrar la aplicación de buenas prácticas de ingeniería de datos y modelado analítico para el sector energético.
 
